@@ -1,6 +1,5 @@
 import { getRepository } from "typeorm"
 import { Movies } from "@models/entity/Movies"
-import { User } from "@models/entity/User"
 
 export const getMovies = async (request, response) => {
   try {
@@ -10,13 +9,6 @@ export const getMovies = async (request, response) => {
   } catch (error) {
     return response.status(500).json(error)
   }
-}
-
-export const login = async (request, response) => {
-  const { login, password } = request.body
-  // const userRepository = getRepository(User)
-  // const findUser = await userRepository.find()
-  return response.json({ login, password })
 }
 
 export const getMoviesId = async (request, response) => {
